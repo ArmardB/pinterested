@@ -21,7 +21,6 @@ class PinsController < ApplicationController
   
   def create
     @pin = Pin.new(pin_params)
-
     if @pin.save
       redirect_to @pin, notice: 'Pin was successfully created.' 
     else
@@ -31,7 +30,6 @@ class PinsController < ApplicationController
 
  
   def update
-
     if @pin.update(pin_params)
       redirect_to @pin, notice: 'Pin was successfully updated.'
     else
@@ -43,7 +41,6 @@ class PinsController < ApplicationController
   def destroy
     @pin.destroy
     redirect_to pins_url, notice: 'Pin was successfully destroyed.'  
-    end
   end
 
   private
